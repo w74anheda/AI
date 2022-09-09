@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+
+  anaconda_jupyter_notebook:
+    image: continuumio/anaconda3
+    container_name: ${PROJECT_NAME}
+    ports:
+      - "${PORT}:8888"
+    volumes:
+      - ${PWD}/../:/opt/notebooks
+    command: bash -c "conda install jupyter -y --quiet && mkdir -p /opt/notebooks && jupyter notebook --notebook-dir=/opt/notebooks --ip='*' --port=8888 --no-browser --allow-root"
+
