@@ -6,6 +6,6 @@
 #     --no-browser --allow-root"
     
 docker-compose up
-echo 'starting ...'
-sleep 30
+# echo 'starting ...'
+# sleep 30
 docker-compose logs
