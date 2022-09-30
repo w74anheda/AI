@@ -1,3 +1,4 @@
 ./app/datasets/*
 app/datasets/*
-
+./datasets/*
+datasets/*
