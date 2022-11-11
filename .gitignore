@@ -2,3 +2,7 @@
 app/datasets/*
 ./datasets/*
 datasets/*
+app/Kaggle Projects/FAM/catboost_info/catboost_training.json
+*.json
+app/Kaggle Projects/FAM/catboost_info/catboost_training.json
+*.json
