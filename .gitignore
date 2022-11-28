@@ -4,3 +4,7 @@ app/datasets/*
 datasets/*
 app/Kaggle Projects/FAM/catboost_info/heart.masoud
 app/Projects/Color-Image/image_DF.csv
+app/learn/11-neural network/tf-cnn-mnist.m74/saved_model.pb
+app/learn/11-neural network/tf-cnn-mnist.m74/keras_metadata.pb
+app/learn/11-neural network/tf-cnn-mnist.m74/variables/variables.data-00000-of-00001
+app/learn/11-neural network/tf-cnn-mnist.m74/variables/variables.index
