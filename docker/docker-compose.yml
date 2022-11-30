@@ -9,6 +9,27 @@ services:
       - "${PORT}:8888"
     volumes:
       - ../app/:/opt/notebooks
-    command: bash -c "conda install jupyter -y --quiet && mkdir -p /opt/notebooks && jupyter notebook --notebook-dir=/opt/notebooks --ip='*' --port=8888 --no-browser --allow-root"
+      - /dev/video0:/dev/video0
+      - /dev/video1:/dev/video1
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    devices : 
+      - /dev/video0:/dev/video0
+      - /dev/video1:/dev/video1
+    privileged: true
+    environment:
+      - DISPLAY=unix$DISPLAY
+
+    command: bash -c "
+     
+      mkdir -p /opt/notebooks &&
+      jupyter notebook --notebook-dir=/opt/notebooks --ip='*' --port=8888 --no-browser --allow-root"
 
 
+      # && conda install -c conda-forge tensorflow
+      # && conda install -c menpo opencv
+      # conda install jupyter -y --quiet && 
+      # --device /dev/video0
+      #pip install opencv-python &&
+
+       # pip install opencv-python &&
+      # apt-get update && apt-get install ffmpeg libsm6 libxext6 -y && apt-get install libgl1 -y 
