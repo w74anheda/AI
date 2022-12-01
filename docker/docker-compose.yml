@@ -16,20 +16,20 @@ services:
       - /dev/video0:/dev/video0
       - /dev/video1:/dev/video1
     privileged: true
+
     environment:
       - DISPLAY=unix$DISPLAY
+    command: >
+      bash -c "
+        mkdir -p /opt/notebooks &&
+        jupyter notebook --notebook-dir=/opt/notebooks --ip='*' --port=8888 --no-browser --allow-root 
+      "
 
-    command: bash -c "
-     
-      mkdir -p /opt/notebooks &&
-      jupyter notebook --notebook-dir=/opt/notebooks --ip='*' --port=8888 --no-browser --allow-root"
-
-
-      # && conda install -c conda-forge tensorflow
-      # && conda install -c menpo opencv
-      # conda install jupyter -y --quiet && 
-      # --device /dev/video0
-      #pip install opencv-python &&
-
-       # pip install opencv-python &&
-      # apt-get update && apt-get install ffmpeg libsm6 libxext6 -y && apt-get install libgl1 -y 
+# 1- pip install opencv-python
+# 2- apt-get update 
+# 3- apt-get install ffmpeg libsm6 libxext6 -y 
+# 4- apt-get install libgl1 -y && apt-get install libgl1 -y 
+# 5- conda create -n tf-gpu tensorflow-gpu -y 
+# 6- conda activate tf-gpu
+# 7- xhost + &&
+# 8- conda install jupyter -y --quiet 
