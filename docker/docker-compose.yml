@@ -25,7 +25,7 @@ services:
         jupyter notebook --notebook-dir=/opt/notebooks --ip='*' --port=8888 --no-browser --allow-root 
       "
 
-# 1- pip install opencv-python
+# 1- pip install opencv-python & conda install -c menpo opencv
 # 2- apt-get update 
 # 3- apt-get install ffmpeg libsm6 libxext6 -y 
 # 4- apt-get install libgl1 -y && apt-get install libgl1 -y 
