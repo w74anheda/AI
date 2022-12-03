@@ -17,6 +17,15 @@ services:
       - /dev/video1:/dev/video1
     privileged: true
 
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+
     environment:
       - DISPLAY=unix$DISPLAY
     command: >
@@ -24,12 +33,3 @@ services:
         mkdir -p /opt/notebooks &&
         jupyter notebook --notebook-dir=/opt/notebooks --ip='*' --port=8888 --no-browser --allow-root 
       "
-
-# 1- pip install opencv-python & conda install -c menpo opencv
-# 2- apt-get update 
-# 3- apt-get install ffmpeg libsm6 libxext6 -y 
-# 4- apt-get install libgl1 -y && apt-get install libgl1 -y 
-# 5- conda create -n tf-gpu tensorflow-gpu -y 
-# 6- conda activate tf-gpu
-# 7- xhost + &&
-# 8- conda install jupyter -y --quiet 
