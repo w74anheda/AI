@@ -1,0 +1,2 @@
+model_checkpoint_path: "amir_norm"
+all_model_checkpoint_paths: "amir_norm"
